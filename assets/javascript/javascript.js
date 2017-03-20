@@ -103,9 +103,12 @@ $(document).ready(function() {
   	};
   };
 
+
   // if ($("#topic-input").val() !=="") {
     $("#add-topic").on("click", function(event) {
           event.preventDefault();
+
+          if ($("#topic-input").val() !=="") {
 
           // This line grabs the input from the textbox
           var topic = $("#topic-input").val().trim();
@@ -118,7 +121,12 @@ $(document).ready(function() {
 
           // Calling createButtons which handles the processing of our movie array
           createButtons();
-        });
+      
+    } else{
+      alert("Field is blank!");
+    }
+
+  });
 
     // } 
     // else {
